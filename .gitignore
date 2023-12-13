@@ -1,0 +1,10 @@
+*.exe
+*.ilk
+*.obj
+*.pdb
+**/.vs
+**/.vscode
+
+*.bkp
+*.dtmp
+*.bkp
