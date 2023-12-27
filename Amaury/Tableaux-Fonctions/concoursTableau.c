@@ -1,6 +1,14 @@
 #include <stdio.h>
 #define TAILLE 10
 
+void afficherTableau(int tab[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\n", tab[i]);
+    }
+}
+
 int main(void)
 {
     int scores[TAILLE], i, scoreCent = 0, meilleurScore = 0, iTabCinqCent = 0, cinqCent[TAILLE];
@@ -10,10 +18,7 @@ int main(void)
         scores[iTabScores] = rand() % 1000;
     }
 
-    for (i = 0; i < TAILLE; i++)
-    {
-        printf("%d\n", scores[i]);
-    }
+    afficherTableau(scores, TAILLE);
 
     for (i = 0; i < TAILLE; i++)
     {
