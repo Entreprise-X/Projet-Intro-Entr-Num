@@ -17,14 +17,19 @@ void afficherTableau(int tab[], int size)
     }
 }
 
-int main(void)
+void afficherResultats(int cent, int cinq[], int i, int best)
 {
-    int scores[TAILLE], i, scoreCent = 0, meilleurScore = 0, iTabCinqCent = 0, cinqCent[TAILLE];
+    printf("Score 100 : %d\n", cent);
 
-    initialisation(scores);
+    printf("Plus de 500\n");
+    afficherTableau(cinq, i);
 
-    afficherTableau(scores, TAILLE);
+    printf("Le meilleur : %d", best + 1);
+}
 
+void classement(int scores[])
+{
+    int i, scoreCent = 0, meilleurScore = 0, iTabCinqCent = 0, cinqCent[TAILLE];
     for (i = 0; i < TAILLE; i++)
     {
         if (scores[i] == 100)
@@ -39,14 +44,16 @@ int main(void)
         if (scores[i] > scores[meilleurScore])
             meilleurScore = i;
     }
+    afficherResultats(scoreCent, cinqCent, iTabCinqCent, meilleurScore);
+}
 
-    printf("Score 100 : %d\n", scoreCent);
+int main(void)
+{
+    int scores[TAILLE], i, scoreCent = 0, meilleurScore = 0, iTabCinqCent = 0, cinqCent[TAILLE];
 
-    printf("Plus de 500\n");
-    for (i = 0; i < iTabCinqCent; i++)
-    {
-        printf("%d\n", cinqCent[i]);
-    }
+    initialisation(scores);
 
-    printf("Le meilleur : %d", meilleurScore + 1);
+    afficherTableau(scores, TAILLE);
+
+    classement(scores);
 }
