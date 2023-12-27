@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAILLE 10
+#define TAILLE 5000
 
 void initialisation(int scores[])
 {
@@ -49,7 +49,7 @@ void classement(int scores[])
 
 int main(void)
 {
-    int scores[TAILLE], i, scoreCent = 0, meilleurScore = 0, iTabCinqCent = 0, cinqCent[TAILLE];
+    int scores[TAILLE];
 
     initialisation(scores);
 
